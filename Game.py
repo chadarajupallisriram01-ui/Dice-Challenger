@@ -111,7 +111,7 @@ def start():
             
 
     with col2:
-        st.subheader(f"Your skipped Score : st.session_state.image1")
+        st.subheader(f"Your skipped Score : {st.session_state.image1}")
     col1, col2 = st.columns(2)
 
     with col1:
