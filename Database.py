@@ -17,5 +17,14 @@ def create_tables():
                 status text not null,
                 created_at timestamp
                 )""")
+    cur.execute("""Create Table if not exists players(
+                Mobile integer primary key,
+                Name text not null,
+                status text not null,
+                created_at timestamp
+                )""")
+
+    conn.commit()
+    conn.close()
 create_tables()
 print("Database created")
