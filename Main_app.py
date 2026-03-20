@@ -45,8 +45,7 @@ if st.session_state.page == "Login":
         if mobile(Mobile) == "You are Registered Successfully..":
             st.checkbox("Mobile Number",True)
             st.session_state.page = "start"
-            st.rerun()
-
+            
 elif st.session_state.page == "start":
     st.subheader("Welcome to Dice Challenger")
     st.success("All the Best all my players 👍")
