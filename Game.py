@@ -66,7 +66,7 @@ def start():
             st.session_state.p2 *=0
         
         
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2 = st.columns(2)
 
 
 
@@ -111,28 +111,9 @@ def start():
             
 
     with col2:
-        st.subheader(f"Your skipped Score : 1")
+        st.subheader(f"Your skipped Score : st.session_state.image1")
     col1, col2 = st.columns(2)
 
     with col1:
         st.number_input("Player Score",value = st.session_state.p1, disabled=True)
-def mobile(Mobile):
-    import re
-    now = dt.now().strftime("%y-%m-%D %H-%M-%S")
-    if not re.search(r'^[6-9]\d{9}$',Mobile):
-        return "Mobile number starts with 6,7,8,9 only and contains be 10 digits"
-    else:
-        conn = get_connection()
-        cur = conn.cursor()
-        cur.execute("""Insert or Ignore into Won(
-                    mobile,status,created_at
-                    )values(?,?,?)""",(Mobile,False,now))
-        conn.commit()
-        cur.execute("select Name from Won where Mobile = ?",(Mobile,))
-        f=cur.fetchone()
-        if f:
-            st.session_state.name = f[0]
-        st.write(st.session_state.name)
-        conn.close()
-        return "You are Registered Successfully.."
-    
+start()
