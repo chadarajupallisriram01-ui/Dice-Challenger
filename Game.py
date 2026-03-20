@@ -115,7 +115,7 @@ def start():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.number_input("Player Score",value = st.session_state.p1, disabled=Tru
+        st.number_input("Player Score",value = st.session_state.p1, disabled=True)
 def mobile(Mobile):
     import re
     now = dt.now().strftime("%y-%m-%D %H-%M-%S")
