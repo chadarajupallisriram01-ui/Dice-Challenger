@@ -37,7 +37,7 @@ def start():
 
     st.subheader(f"Your Target : {st.session_state.target}")
 
-    n=random(1,6)
+    n=r.randint(1,6)
     def Person_1():
         st.session_state.image = n
         if n>1:
